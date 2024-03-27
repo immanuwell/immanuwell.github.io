@@ -1,23 +1,23 @@
-name: Run Unit Test
-
-on:
-  push
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Build Docker image
-      run: docker build -t streamlit ./app
-
-    - name: Run Docker container
-      run: docker run -p 8501:8501 streamlit
+#name: Run Unit Test
+#
+#on:
+#  push
+#
+#jobs:
+#  test:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#    - name: Checkout repository
+#      uses: actions/checkout@v2
+#
+#    - name: Set up Python
+#      uses: actions/setup-python@v2
+#      with:
+#        python-version: '3.x'
+#
+#    - name: Build Docker image
+#      run: docker build -t streamlit ./app
+#
+#    - name: Run Docker container
+#      run: docker run -p 8501:8501 streamlit
