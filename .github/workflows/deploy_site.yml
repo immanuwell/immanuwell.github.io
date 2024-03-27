@@ -16,14 +16,8 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Deploy
-      run: |
-        cd .
-      run: |
-        cd .
-      run: |
-        cd app 
-      run: |
-        docker build . -t streamlit
-      run: |
-        docker run -p 8501:8501 streamlit
+    - name: Build Docker image
+      run: docker build -t streamlit ./app
+
+    - name: Run Docker container
+      run: docker run -p 8501:8501 streamlit
